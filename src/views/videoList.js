@@ -1,8 +1,6 @@
 var VideoListView = Backbone.View.extend({
-  
-  el: ".list",
 
-  initialize: function(){
+  initialize: function() {
     
     this.listenTo(this.collection, 'sync', this.render);
   },
@@ -11,15 +9,15 @@ var VideoListView = Backbone.View.extend({
   
     this.$el.children().detach();
     this.$el.html(this.template());
-    
 
-    this.$el.append(this.collection.models.map(function(video) {
-      //var list =  // do we need '.el' at the end??
-      return new VideoListEntryView({model: video}).render();
-    }));
+    this.collection.each(this.renderVideo, this);
     
-    
-    return this.$el;
+    return this;
+  },
+
+
+  renderVideo: function(video) {
+    this.$('.video-list').append(new VideoListEntryView({model: video}).render().el);
   },
 
   template: templateURL('src/templates/videoList.html')
