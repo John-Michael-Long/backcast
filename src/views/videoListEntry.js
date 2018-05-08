@@ -1,8 +1,8 @@
 var VideoListEntryView = Backbone.View.extend({
-  el: ".video-list",
+  el: ".video-list-entry-media",
   
   initialize: function(){
-    
+    $('.video-list-entry-title').on('click', this.model.select());
   },
 
 
