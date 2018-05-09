@@ -1,4 +1,4 @@
-describe ('VideoPlayerView', function() {
+xdescribe ('VideoPlayerView', function() {
   var view, collection, model;
 
   beforeEach(function() {

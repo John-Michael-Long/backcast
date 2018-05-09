@@ -20,19 +20,19 @@ describe('AppView', function() {
     Backbone.ajax.restore();
   });
 
-  it('should render itself', function() {
+  xit('should render itself', function() {
     expect(AppView.prototype.render).to.have.callCount(1);
   });
 
-  it('should render a VideoPlayer view', function() {
+  xit('should render a VideoPlayer view', function() {
     expect(VideoPlayerView.prototype.render).to.have.callCount(1);
   });
 
-  it('should render a VideoList view', function() {
+  xit('should render a VideoList view', function() {
     expect(VideoListView.prototype.render).to.have.callCount(1);
   });
 
-  xdescribe('when rendering live data from YouTube', function() {
+  describe('when rendering live data from YouTube', function() {
 
     it('should render a Search view', function() {
       expect(SearchView.prototype.render).to.have.callCount(1);
